@@ -16,6 +16,8 @@ const App = () => {
    
   const [selected, setSelected] = useState(0)
 
+  let mostVoted = points.indexOf(Math.max(...points))
+
   return (
     <>
     <h1>Anecdote of the day</h1>
@@ -37,7 +39,8 @@ const App = () => {
     <h1>Anecdote with Most Votes</h1>
 
     
-    <div>{anecdotes[points.indexOf(Math.max(...points))]}</div> {/* Will return first value in case of tie */}
+    <div>{anecdotes[mostVoted]}</div> {/* Will return first value in case of tie */}
+    <div>has {points[mostVoted]} votes</div> {/* Will return first value in case of tie */}
     </>
 
     
